@@ -1,0 +1,28 @@
+# Calculate-electric-bill
+coding:
+import java.util.Scanner;
+
+public class ElectricBillCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of units consumed: ");
+        int units = scanner.nextInt();
+        double billAmount = 0;
+        if (units <= 100) {
+            billAmount = units * 1.5; 
+        } else if (units <= 200) {
+            billAmount = (100 * 1.5) + (units - 100) * 2.5; 
+        } else if (units <= 300) {
+            billAmount = (100 * 1.5) + (100 * 2.5) + (units - 200) * 4.0; 
+        } else {
+            billAmount = (100 * 1.5) + (100 * 2.5) + (100 * 4.0) + (units - 300) * 5.0; 
+        }
+        billAmount += 50;
+        System.out.println("Your total electricity bill is: Rs. " + billAmount);
+        scanner.close();
+    }
+}
+
+output:
+Enter the number of units consumed: 350
+Your total electricity bill is: Rs. 950.0
